@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название сайта</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="{% url 'home' %}">Sushi Shop Minsk</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Главная</a></li>
+                <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                <li><a href="{% url 'profile' %}">Мой профиль</a></li>
+                <li><a href="{% url 'cart' %}">Корзина</a></li>
+                <li><a href="{% url 'orders' %}">Статус заказов</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'admin:index' %}">Администрирование</a></li>
+                    <li><a href="{% url 'logout' %}">Выход</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Вход</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Контент страницы -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sushi Shop Minsk</p>
+    </footer>
+</body>
+</html>

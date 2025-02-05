@@ -1,0 +1,15 @@
+<!-- templates/orders.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Мои заказы</h1>
+
+    <div>
+        <p>Статус ваших заказов:</p>
+        <!-- Логика для отображения заказов пользователя -->
+    </div>
+
+    <div>
+        <a href="{% url 'home' %}">Вернуться на главную</a>
+    </div>
+{% endblock %}

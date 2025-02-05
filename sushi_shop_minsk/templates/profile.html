@@ -1,0 +1,17 @@
+<!-- templates/profile.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Мой профиль</h1>
+
+    <div>
+        <p>Здесь будет информация о пользователе.</p>
+        <p><strong>Имя:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <!-- Другие данные профиля -->
+    </div>
+
+    <div>
+        <a href="{% url 'home' %}">Вернуться на главную</a>
+    </div>
+{% endblock %}
