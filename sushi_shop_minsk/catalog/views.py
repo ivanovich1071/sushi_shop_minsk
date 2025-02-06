@@ -1,6 +1,12 @@
-# catalog/views.py
 from django.shortcuts import render
+from .models import Product
 
-# Представление для главной страницы
+# Главная страница
 def home(request):
-    return render(request, 'home.html')
+    products = Product.objects.all()  # Получаем все товары
+    return render(request, 'home.html', {'products': products})
+
+# Страница каталога товаров
+def catalog(request):
+    products = Product.objects.all()  # Получаем все товары
+    return render(request, 'catalog.html', {'products': products})

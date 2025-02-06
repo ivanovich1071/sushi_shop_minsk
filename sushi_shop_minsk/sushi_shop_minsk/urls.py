@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from catalog import views as catalog_views
+from orders import views as orders_views
+from users import views as users_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', catalog_views.home, name='home'),
+    path('', catalog_views.home, name='home'),  # Главная страница
+    path('catalog/', catalog_views.catalog, name='catalog'),  # Страница каталога
+    path('profile/', users_views.profile, name='profile'),  # Страница профиля
+    path('cart/', catalog_views.cart, name='cart'),  # Страница корзины
+    path('orders/', orders_views.orders, name='orders'),  # Страница заказов
 ]
