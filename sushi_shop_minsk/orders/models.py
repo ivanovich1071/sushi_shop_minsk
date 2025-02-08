@@ -1,6 +1,6 @@
 from django.db import models
-from users.models import User
-from catalog.models import Product
+from sushi_shop_minsk.users.models import User
+from sushi_shop_minsk.catalog.models import Product
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

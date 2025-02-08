@@ -28,10 +28,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',          # Приложение для пользователей
-    'catalog',        # Приложение для каталога
-    'orders',         # Приложение для заказов
-    'api',            # Приложение для API
+    'sushi_shop_minsk.users',          # Приложение для пользователей
+    'sushi_shop_minsk.catalog',        # Приложение для каталога
+    'sushi_shop_minsk.orders',         # Приложение для заказов
+    'sushi_shop_minsk.api',            # Приложение для API
     'rest_framework', # Для работы с REST API
     'corsheaders',    # Для работы с CORS
 ]
@@ -46,7 +46,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sushi_shop_minsk.urls'
+ROOT_URLCONF = 'sushi_shop_minsk.sushi_shop_minsk.urls'
 
 TEMPLATES = [
     {
@@ -64,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sushi_shop_minsk.wsgi.application'
+WSGI_APPLICATION = 'sushi_shop_minsk.sushi_shop_minsk.wsgi.application'
 
 # Database
 DATABASES = {
